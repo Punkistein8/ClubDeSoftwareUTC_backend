@@ -25,7 +25,7 @@ const corsOptions = { //Configuraciones de CORS para permitir el acceso a los do
     if (dominiosPermitidos.indexOf(origin) !== -1) {
       callback(null, true)
     } else {
-      callback(new Error('No permitido por CORS'))
+      callback(new Error('No permitido por politica CORS'))
     }
   }
 };
