@@ -20,7 +20,7 @@ const emailRegistro = async (datos) => {
     html: `<p>Hola ${nombre}, vamos a comprobar tu cuenta.</p>
     <p>Gracias por registrarte en Club de Software UTC.
     Para confirmar tu cuenta, haz click en el siguiente enlace:
-    <a href="${process.env.FRONTEND_URL}/frontend/confirmar/${token}">Confirmar cuenta</a></p>
+    <a href="${process.env.FRONTEND_URL}/confirmar/${token}">Confirmar cuenta</a></p>
     <p>Si no has solicitado una cuenta, simplemente ignora este mensaje.</p>`
   });
   console.log('Message sent: %s', info.messageId);
