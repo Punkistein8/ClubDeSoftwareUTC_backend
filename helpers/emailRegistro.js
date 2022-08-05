@@ -2,8 +2,8 @@ import nodemailer from 'nodemailer';
 
 const emailRegistro = async (datos) => {
   let transport = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST_GM,
-    port: process.env.EMAIL_PORT_GM,
+    host: 'smtp.gmail.com',
+    port: '465',
     // secure: false,
     secureConnection: false,
     logger: true,
