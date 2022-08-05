@@ -10,7 +10,7 @@ const emailRegistro = async (datos) => {
     debug: true,
     ignoreTLS: true, // add this
     auth: {
-      user: process.env.EMAIL_USER_GM,
+      user: 'clubdesoftwareutc@gmail.com',
       pass: process.env.EMAIL_PASS_GM
     },
     tls: {
