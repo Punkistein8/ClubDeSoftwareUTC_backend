@@ -1,20 +1,31 @@
 
 import Taller from '../models/Taller.js';
 
+//Admin
 const agregarTaller = async (req, res) => {
 
   // const { nombreTaller, responsables, descripcion, inscritos } = req.body;
   try {
     const taller = new Taller(req.body);
     // taller.save();
+    console.log(req.user);
     const tallerGuardado = await taller.save();
-    const { nombreTaller } = tallerGuardado;
-    res.json({ message: `Taller '${nombreTaller}' guardado correctamente` });
+    res.json(tallerGuardado);
   } catch (error) {
     return res.status(400).json({ error: error.message });
   }
 }
+const obtenerTalleres = async (req, res) => {
+  try {
+    const talleres = await Taller.find();
+    res.json(talleres);
+  } catch (error) {
+    const e = new Error('No se pudieron obtener los talleres');
+    return res.status(400).json({ error: e + error.message });
+  }
+}
 
+//Privadas
 const inscribirseTaller = async (req, res) => {
   const { nombreTaller, inscribirse } = req.body;
 
@@ -25,7 +36,6 @@ const inscribirseTaller = async (req, res) => {
   }
 
   if (inscribirse) {
-
     //VERIFICANDO SI EL USUARIO ESTA YA INSCRITO
     const { inscritos } = taller;
     let isInscribed = false;
@@ -55,7 +65,6 @@ const inscribirseTaller = async (req, res) => {
     return res.status(402).json({ err: error.message })
   }
 };
-
 const estoyInscrito = async (req, res) => {
   //VER SI ESTAS INSCRITO EN EL TALLER SELECCIONADO
   //EN QUE TALLERES ESTAS INSCRITO
@@ -81,4 +90,4 @@ const estoyInscrito = async (req, res) => {
 
 }
 
-export { agregarTaller, inscribirseTaller, estoyInscrito };
+export { agregarTaller, inscribirseTaller, estoyInscrito, obtenerTalleres };

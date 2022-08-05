@@ -32,8 +32,6 @@ const corsOptions = { //Configuraciones de CORS para permitir el acceso a los do
 // //Permitiendo que la app use CORS para que se pueda acceder desde los dominios permitidos
 app.use(cors(corsOptions));
 
-
-
 //Para hacer que la api pueda responder en JSON
 app.use(express.json())
 

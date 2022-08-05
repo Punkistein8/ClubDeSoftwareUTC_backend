@@ -30,6 +30,7 @@ const registrar = async (req, res) => {
 
 const perfil = (req, res) => {
   const { user } = req; //Destructuring de la variable de servidor que contiene el usuario logeado
+  console.log(user);
   res.json(user)
 }
 
