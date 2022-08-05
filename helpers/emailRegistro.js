@@ -8,8 +8,8 @@ const emailRegistro = async (datos) => {
     logger: true,
     debug: true,
     auth: {
-      user: process.env.EMAIL_USER_GM,
-      pass: process.env.EMAIL_PASS_GM
+      user: 'clubdesoftwareutc@gmail.com',
+      pass: 'kzwghhivpaekaofg'
     },
     tls: {
       // do not fail on invalid certs

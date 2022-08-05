@@ -2,13 +2,19 @@ import nodemailer from 'nodemailer';
 
 const emailOlvidePassword = async (datos) => {
   let transport = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST_GM,
+    host: 'smtp.gmail.com',
     port: process.env.EMAIL_PORT_GM,
-    secure: true,
+    secure: false,
+    logger: true,
+    debug: true,
     auth: {
-      user: process.env.EMAIL_USER_GM,
-      pass: process.env.EMAIL_PASS_GM
-    }
+      user: 'clubdesoftwareutc@gmail.com',
+      pass: 'kzwghhivpaekaofg'
+    },
+    tls: {
+      // do not fail on invalid certs
+      rejectUnauthorized: false
+    },
   });
 
   const { email, nombre, token } = datos;
