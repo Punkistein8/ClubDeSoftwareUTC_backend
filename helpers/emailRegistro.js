@@ -8,7 +8,11 @@ const emailRegistro = async (datos) => {
     auth: {
       user: process.env.EMAIL_USER_GM,
       pass: process.env.EMAIL_PASS_GM
-    }
+    },
+    tls: {
+      // do not fail on invalid certs
+      rejectUnauthorized: false
+    },
   });
 
   const { email, nombre, token } = datos;
