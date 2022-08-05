@@ -4,7 +4,7 @@ const emailRegistro = async (datos) => {
   let transport = nodemailer.createTransport({
     host: process.env.EMAIL_HOST_GM,
     port: process.env.EMAIL_PORT_GM,
-    secure: false,
+    // secure: false,
     logger: true,
     debug: true,
     ignoreTLS: true, // add this
