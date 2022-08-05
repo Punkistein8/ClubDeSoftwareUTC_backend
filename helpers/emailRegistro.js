@@ -5,13 +5,13 @@ const emailRegistro = async (datos) => {
     host: 'smtp.gmail.com',
     port: process.env.EMAIL_PORT_GM,
     secure: false,
-    secureConnection: false,
+    // secureConnection: false,
     logger: true,
     debug: true,
     // ignoreTLS: true, // add this
     auth: {
       user: 'clubdesoftwareutc@gmail.com',
-      pass: process.env.EMAIL_PASS_GM
+      pass: 'kzwghhivpaekaofg'
     },
     tls: {
       // do not fail on invalid certs
