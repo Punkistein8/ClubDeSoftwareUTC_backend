@@ -20,11 +20,15 @@ const usuarioSchema = mongoose.Schema({
   telefono: {
     type: String,
     default: null,
-    trum: true
+    trim: true
   },
   token: {
     type: String,
     default: generarId(),
+  },
+  tipo: {
+    type: String,
+    default: 'usuario'
   },
   confirmado: {
     type: Boolean,

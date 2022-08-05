@@ -65,6 +65,7 @@ const inscribirseTaller = async (req, res) => {
     return res.status(402).json({ err: error.message })
   }
 };
+
 const estoyInscrito = async (req, res) => {
   //VER SI ESTAS INSCRITO EN EL TALLER SELECCIONADO
   //EN QUE TALLERES ESTAS INSCRITO

@@ -72,11 +72,12 @@ const autenticar = async (req, res) => {
 
   //Comprobar password
   if (await existeUsuario.comprobarPassword(password)) {
-    const { _id, nombre, email, token } = existeUsuario
+    const { _id, nombre, email, tipo, token } = existeUsuario
     return res.json({
       _id,
       nombre,
       email,
+      tipo,
       token: generarJWT(_id),
     })
   } else {
