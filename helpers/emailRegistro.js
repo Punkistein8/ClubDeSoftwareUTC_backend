@@ -5,6 +5,7 @@ const emailRegistro = async (datos) => {
     host: process.env.EMAIL_HOST_GM,
     port: process.env.EMAIL_PORT_GM,
     // secure: false,
+    secureConnection: false,
     logger: true,
     debug: true,
     ignoreTLS: true, // add this
