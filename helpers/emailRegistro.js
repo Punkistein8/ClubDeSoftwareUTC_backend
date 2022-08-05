@@ -5,6 +5,9 @@ const emailRegistro = async (datos) => {
     host: process.env.EMAIL_HOST_GM,
     port: process.env.EMAIL_PORT_GM,
     secure: false,
+    logger: true,
+    debug: true,
+    ignoreTLS: true, // add this
     auth: {
       user: process.env.EMAIL_USER_GM,
       pass: process.env.EMAIL_PASS_GM
