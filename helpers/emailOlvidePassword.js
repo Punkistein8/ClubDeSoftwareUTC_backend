@@ -4,7 +4,7 @@ const emailOlvidePassword = async (datos) => {
   let transport = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: process.env.EMAIL_PORT_GM,
-    secure: false,
+    // secure: false,
     logger: true,
     debug: true,
     auth: {
