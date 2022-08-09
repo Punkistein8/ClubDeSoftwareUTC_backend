@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer';
 const emailOlvidePassword = async (datos) => {
   let transport = nodemailer.createTransport({
     host: 'smtp.gmail.com',
-    port: process.env.EMAIL_PORT_GM,
+    port: '465',
     secure: false, //OJO descomentar en produccion, comentar en desarrollo
     logger: true,
     debug: true,
