@@ -4,7 +4,7 @@ const emailRegistro = async (datos) => {
   let transport = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: '465',
-    // secure: false, //OJO descomentar en produccion, comentar en desarrollo
+    secure: false, //OJO descomentar en produccion, comentar en desarrollo
     logger: true,
     debug: true,
     auth: {
