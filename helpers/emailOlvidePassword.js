@@ -2,14 +2,14 @@ import nodemailer from 'nodemailer';
 
 const emailOlvidePassword = async (datos) => {
   let transport = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: '465',
-    // secure: false, //OJO descomentar en produccion, comentar en desarrollo
+    host: process.env.EMAIL_HOST_GM,
+    port: process.env.EMAIL_PORT_GM,
+    secure: true, //OJO
     logger: true,
     debug: true,
     auth: {
-      user: 'utcsoftwareclub@gmail.com',
-      pass: 'pjrkdgoqbwhapsxf'
+      user: process.env.EMAIL_USER_GM,
+      pass: process.env.EMAIL_PASS_GM,
     },
     tls: {
       // do not fail on invalid certs
